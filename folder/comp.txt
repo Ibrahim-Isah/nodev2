@@ -1,0 +1,12 @@
+win32 ISAH-IBRAHIM function userInfo(options) {
+  if (typeof options !== 'object')
+    options = null;
+
+  const ctx = {};
+  const user = getUserInfo(options, ctx);
+
+  if (user === undefined)
+    throw new ERR_SYSTEM_ERROR(ctx);
+
+  return user;
+}
